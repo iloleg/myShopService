@@ -1,0 +1,24 @@
+﻿@using ShopService.SVC.Contexts
+@using ShopService.Models.DeliveryIntervalTemplateViewModels
+@model DeliveryIntervalTemplateViewModel
+<h1>Периоды доставки</h1>
+<div class="row">
+    @foreach (var template in Model.DeliveryIntervalTemplates)
+    {
+        <a class="btn btn-primary btn-sm btn-raised"
+           asp-controller="DeliveryInterval"
+           asp-action="Index"
+           asp-route-id="@template.Id">
+            @template.Name
+        </a>
+    }
+</div>
+@await Html.PartialAsync("./Partial/_AddDeliveryInterval"
+    , new SaveDeliveryIntervalContext(Model.SelectedDeliveryIntervalTemplate))
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+
+        });
+    </script>
+}

@@ -1,0 +1,11 @@
+﻿@using ShopService.Models.SubscriptionViewModels
+@model SetTodayDateModel
+<form asp-action="ReloadWithPointedDate" asp-controller="Subscription" method="post">
+    <h3>Сегодняшняя дата</h3>
+    <div class="col-xs-9 form-group">
+        <input class="js-datepicker form-control" asp-for="Today">
+        <button class="btn btn-primary" type="submit">
+            <span class="glyphicon glyphicon-calendar"></span> Выбрать другую дату
+        </button>
+    </div>
+</form>

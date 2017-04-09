@@ -1,0 +1,17 @@
+﻿@model ShopService.Entities.Product
+<form asp-action="AddToSubscription" asp-controller="Subscription" method="post">
+    @Html.HiddenFor(x => x.Id)
+    <div class="col-xs-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">@Model.Name</h3>
+            </div>
+            <div class="panel-body">
+                <span class="lead">Цена: @Model.Price $</span>
+                <button type="submit" class="btn btn-sm btn-primary pull-right btn-raised">
+                    <span class="glyphicon glyphicon-plus"></span> Добавить товар
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

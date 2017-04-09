@@ -44,7 +44,9 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "ncrontab": "3.3.0"
+    "ncrontab": "3.3.0",
+    "Autofac.Extensions.DependencyInjection": "4.0.0",
+    "NCrontab.Advanced": "1.2.3.3"
   },
 
   "tools": {

@@ -3,7 +3,7 @@ using ShopService.Conventions;
 using ShopService.Conventions.SVC.Commands;
 using ShopService.Conventions.SVC.Queries;
 using ShopService.SVC.Contexts;
-using ShopService.SVC.Criterions.Subscriptions
+using ShopService.SVC.Criterions.Subscriptions;
 
 namespace ShopService.SVC.Commands
 {

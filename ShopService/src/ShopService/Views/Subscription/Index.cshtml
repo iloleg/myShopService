@@ -1,0 +1,71 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using ShopService.Models.SubscriptionViewModels
+@model SubscriptionViewModel
+<h1 class="row">Продукты</h1>
+<div class="row">
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+            if (product.InSubscription)
+            {
+                @await Html.PartialAsync("./Partials/_ProductInSubscriptionPartial", product)
+            }
+            else
+            {
+                @await Html.PartialAsync("./Partials/_ProductPartial", product)
+            }
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="pull-left col-xs-8">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Период доставки</h3>
+                @if (Model.DeliveryIntervalExist)
+                {
+                    <h4>
+                        Текущий пкериод доставки @Model.DeliveryInterval.DeliveryIntervalTemplate.Name,
+                        дата(ы) @Model.DeliveryInterval.SelectedDays
+                    </h4>
+                }
+                <a class="btn btn-primary btn-raised pull-left" asp-controller="DeliveryInterval" asp-action="Index">
+                    @(Model.DeliveryIntervalExist ? "Сменить период доставки" : "Перейти к периодам доставки")
+                </a>
+            </div>
+            <div class="col-xs-12">
+                <h3>История подписок</h3>
+                <h4>@Html.Raw(Model.SubscriptionDatesString)</h4>
+                @await Html.PartialAsync("./Partials/_SuspendResumeSubscriptionPartial", Model.LastSubscriptionDateIsTypeOfStarted)
+            </div>
+            <div class="col-xs-12">
+                <h3>Планируемые даты доставки</h3>
+                <h4>@Html.Raw(Model.DeliveryDatesString)</h4>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default pull-right col-xs-4 text-right">
+        <div class="panel-body">
+            <span class="lead">Сумма товаров: @Model.ProductsPricesSum $</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-3 row">
+        @await Html.PartialAsync("./Partials/_SetTodayDatePartial", new SetTodayDateModel(Model.Today))
+    </div>
+    <div class="col-xs-3 pull-right text-right">
+        <h3>Затраченно средств:</h3> <span class="lead text-primary">@Model.SpentAmount $</span>
+    </div>
+</div>
+<div class="row">
+    <div asp-validation-summary="All" class="text-danger"></div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            var date = $(".js-datepicker").datepicker("getDate");
+            $(".js-datepicker").datepicker("setDate", date);
+        });
+    </script>
+}

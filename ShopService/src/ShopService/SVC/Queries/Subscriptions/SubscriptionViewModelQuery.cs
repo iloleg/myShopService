@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShopService.Conventions.CQS.Queries;
+using ShopService.Conventions.SVC.Queries;
 using ShopService.SVC.Criterions.DeliveryIntervals;
 using ShopService.SVC.Criterions.Products;
 using ShopService.SVC.Criterions.Subscriptions;
 using ShopService.Entities;
 using ShopService.Models.SubscriptionViewModels;
 
-namespace ShopService.SVC.Queries.Subscriptions : IQuery<SubscriptionViewModelCriterion, SubscriptionViewModel>
+namespace ShopService.SVC.Queries.Subscriptions 
 {
-    public class SubscriptionViewModelQuery
+    public class SubscriptionViewModelQuery : IQuery<SubscriptionViewModelCriterion, SubscriptionViewModel>
     {
         private readonly IQueryBuilder _queryBuilder;
 
@@ -53,5 +53,4 @@ namespace ShopService.SVC.Queries.Subscriptions : IQuery<SubscriptionViewModelCr
             return viewModel;
         }
     }
-}
 }
