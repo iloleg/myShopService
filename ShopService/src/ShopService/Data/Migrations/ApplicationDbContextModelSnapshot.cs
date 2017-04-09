@@ -15,201 +15,317 @@ namespace ShopService.Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.0-rc3")
+                .HasAnnotation("ProductVersion", "1.0.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
-                {
-                    b.Property<string>("Id");
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<long>", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
+                b.Property<string>("ClaimType");
 
-                    b.Property<string>("Name")
-                        .HasAnnotation("MaxLength", 256);
+                b.Property<string>("ClaimValue");
 
-                    b.Property<string>("NormalizedName")
-                        .HasAnnotation("MaxLength", 256);
+                b.Property<long>("RoleId");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.HasIndex("NormalizedName")
-                        .HasName("RoleNameIndex");
+                b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoles");
-                });
+                b.ToTable("AspNetRoleClaims");
+            });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<long>", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ClaimType");
+                b.Property<string>("ClaimType");
 
-                    b.Property<string>("ClaimValue");
+                b.Property<string>("ClaimValue");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired();
+                b.Property<long>("UserId");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
+                b.HasIndex("UserId");
 
-                    b.ToTable("AspNetRoleClaims");
-                });
+                b.ToTable("AspNetUserClaims");
+            });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<long>", b =>
+            {
+                b.Property<string>("LoginProvider");
 
-                    b.Property<string>("ClaimType");
+                b.Property<string>("ProviderKey");
 
-                    b.Property<string>("ClaimValue");
+                b.Property<string>("ProviderDisplayName");
 
-                    b.Property<string>("UserId")
-                        .IsRequired();
+                b.Property<long>("UserId");
 
-                    b.HasKey("Id");
+                b.HasKey("LoginProvider", "ProviderKey");
 
-                    b.HasIndex("UserId");
+                b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims");
-                });
+                b.ToTable("AspNetUserLogins");
+            });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<string>", b =>
-                {
-                    b.Property<string>("LoginProvider");
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserRole<long>", b =>
+            {
+                b.Property<long>("UserId");
 
-                    b.Property<string>("ProviderKey");
+                b.Property<long>("RoleId");
 
-                    b.Property<string>("ProviderDisplayName");
+                b.HasKey("UserId", "RoleId");
 
-                    b.Property<string>("UserId")
-                        .IsRequired();
+                b.HasIndex("RoleId");
 
-                    b.HasKey("LoginProvider", "ProviderKey");
+                b.HasIndex("UserId");
 
-                    b.HasIndex("UserId");
+                b.ToTable("AspNetUserRoles");
+            });
 
-                    b.ToTable("AspNetUserLogins");
-                });
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserToken<long>", b =>
+            {
+                b.Property<long>("UserId");
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserRole<string>", b =>
-                {
-                    b.Property<string>("UserId");
+                b.Property<string>("LoginProvider");
 
-                    b.Property<string>("RoleId");
+                b.Property<string>("Name");
 
-                    b.HasKey("UserId", "RoleId");
+                b.Property<string>("Value");
 
-                    b.HasIndex("RoleId");
+                b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.HasIndex("UserId");
+                b.ToTable("AspNetUserTokens");
+            });
 
-                    b.ToTable("AspNetUserRoles");
-                });
+            modelBuilder.Entity("ShopService.Entities.ApplicationRole", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd();
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserToken<string>", b =>
-                {
-                    b.Property<string>("UserId");
+                b.Property<string>("ConcurrencyStamp")
+                    .IsConcurrencyToken();
 
-                    b.Property<string>("LoginProvider");
+                b.Property<string>("Name")
+                    .HasAnnotation("MaxLength", 256);
 
-                    b.Property<string>("Name");
+                b.Property<string>("NormalizedName")
+                    .HasAnnotation("MaxLength", 256);
 
-                    b.Property<string>("Value");
+                b.HasKey("Id");
 
-                    b.HasKey("UserId", "LoginProvider", "Name");
+                b.HasIndex("NormalizedName")
+                    .HasName("RoleNameIndex");
 
-                    b.ToTable("AspNetUserTokens");
-                });
+                b.ToTable("AspNetRoles");
+            });
 
-            modelBuilder.Entity("ShopService.Models.ApplicationUser", b =>
-                {
-                    b.Property<string>("Id");
+            modelBuilder.Entity("ShopService.Entities.ApplicationUser", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd();
 
-                    b.Property<int>("AccessFailedCount");
+                b.Property<int>("AccessFailedCount");
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
+                b.Property<string>("ConcurrencyStamp")
+                    .IsConcurrencyToken();
 
-                    b.Property<string>("Email")
-                        .HasAnnotation("MaxLength", 256);
+                b.Property<string>("Email")
+                    .HasAnnotation("MaxLength", 256);
 
-                    b.Property<bool>("EmailConfirmed");
+                b.Property<bool>("EmailConfirmed");
 
-                    b.Property<bool>("LockoutEnabled");
+                b.Property<bool>("LockoutEnabled");
 
-                    b.Property<DateTimeOffset?>("LockoutEnd");
+                b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<string>("NormalizedEmail")
-                        .HasAnnotation("MaxLength", 256);
+                b.Property<string>("NormalizedEmail")
+                    .HasAnnotation("MaxLength", 256);
 
-                    b.Property<string>("NormalizedUserName")
-                        .HasAnnotation("MaxLength", 256);
+                b.Property<string>("NormalizedUserName")
+                    .HasAnnotation("MaxLength", 256);
 
-                    b.Property<string>("PasswordHash");
+                b.Property<string>("PasswordHash");
 
-                    b.Property<string>("PhoneNumber");
+                b.Property<string>("PhoneNumber");
 
-                    b.Property<bool>("PhoneNumberConfirmed");
+                b.Property<bool>("PhoneNumberConfirmed");
 
-                    b.Property<string>("SecurityStamp");
+                b.Property<string>("SecurityStamp");
 
-                    b.Property<bool>("TwoFactorEnabled");
+                b.Property<bool>("TwoFactorEnabled");
 
-                    b.Property<string>("UserName")
-                        .HasAnnotation("MaxLength", 256);
+                b.Property<string>("UserName")
+                    .HasAnnotation("MaxLength", 256);
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.HasIndex("NormalizedEmail")
-                        .HasName("EmailIndex");
+                b.HasIndex("NormalizedEmail")
+                    .HasName("EmailIndex");
 
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasName("UserNameIndex");
+                b.HasIndex("NormalizedUserName")
+                    .IsUnique()
+                    .HasName("UserNameIndex");
 
-                    b.ToTable("AspNetUsers");
-                });
+                b.ToTable("AspNetUsers");
+            });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
-                        .WithMany("Claims")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+            modelBuilder.Entity("ShopService.Entities.DeliveryInterval", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd();
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<string>", b =>
-                {
-                    b.HasOne("ShopService.Models.ApplicationUser")
-                        .WithMany("Claims")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+                b.Property<string>("CronString")
+                    .HasAnnotation("MaxLength", 120);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<string>", b =>
-                {
-                    b.HasOne("ShopService.Models.ApplicationUser")
-                        .WithMany("Logins")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+                b.Property<long>("DeliveryIntervalTemplateId");
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserRole<string>", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
-                        .WithMany("Users")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                b.HasKey("Id");
 
-                    b.HasOne("ShopService.Models.ApplicationUser")
-                        .WithMany("Roles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+                b.HasIndex("DeliveryIntervalTemplateId");
+
+                b.ToTable("DeliveryIntervals");
+            });
+
+            modelBuilder.Entity("ShopService.Entities.DeliveryIntervalTemplate", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd();
+
+                b.Property<string>("CronFormatMonthFrequency")
+                    .HasAnnotation("MaxLength", 5);
+
+                b.Property<int>("DatesCountInMonth")
+                    .HasAnnotation("MaxLength", 31);
+
+                b.Property<string>("Name")
+                    .HasAnnotation("MaxLength", 100);
+
+                b.HasKey("Id");
+
+                b.ToTable("DeliveryIntervalTemplates");
+            });
+
+            modelBuilder.Entity("ShopService.Entities.Product", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd();
+
+                b.Property<string>("Name")
+                    .HasAnnotation("MaxLength", 200);
+
+                b.Property<double>("Price");
+
+                b.Property<long?>("SubscriptionId");
+
+                b.HasKey("Id");
+
+                b.HasIndex("SubscriptionId");
+
+                b.ToTable("Products");
+            });
+
+            modelBuilder.Entity("ShopService.Entities.Subscription", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd();
+
+                b.Property<long?>("DeliveryIntervalId");
+
+                b.HasKey("Id");
+
+                b.HasIndex("DeliveryIntervalId");
+
+                b.ToTable("Subscriptions");
+            });
+
+            modelBuilder.Entity("ShopService.Entities.SubscriptionDate", b =>
+            {
+                b.Property<long>("Id")
+                    .ValueGeneratedOnAdd();
+
+                b.Property<DateTime>("Date");
+
+                b.Property<long>("SubscriptionId");
+
+                b.Property<int>("Type");
+
+                b.HasKey("Id");
+
+                b.HasIndex("SubscriptionId");
+
+                b.ToTable("SubscriptionDates");
+            });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<long>", b =>
+            {
+                b.HasOne("ShopService.Entities.ApplicationRole")
+                    .WithMany("Claims")
+                    .HasForeignKey("RoleId")
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<long>", b =>
+            {
+                b.HasOne("ShopService.Entities.ApplicationUser")
+                    .WithMany("Claims")
+                    .HasForeignKey("UserId")
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<long>", b =>
+            {
+                b.HasOne("ShopService.Entities.ApplicationUser")
+                    .WithMany("Logins")
+                    .HasForeignKey("UserId")
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserRole<long>", b =>
+            {
+                b.HasOne("ShopService.Entities.ApplicationRole")
+                    .WithMany("Users")
+                    .HasForeignKey("RoleId")
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                b.HasOne("ShopService.Entities.ApplicationUser")
+                    .WithMany("Roles")
+                    .HasForeignKey("UserId")
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity("ShopService.Entities.DeliveryInterval", b =>
+            {
+                b.HasOne("ShopService.Entities.DeliveryIntervalTemplate", "DeliveryIntervalTemplate")
+                    .WithMany("DeliveryIntervals")
+                    .HasForeignKey("DeliveryIntervalTemplateId")
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity("ShopService.Entities.Product", b =>
+            {
+                b.HasOne("ShopService.Entities.Subscription", "Subscription")
+                    .WithMany("Products")
+                    .HasForeignKey("SubscriptionId");
+            });
+
+            modelBuilder.Entity("ShopService.Entities.Subscription", b =>
+            {
+                b.HasOne("ShopService.Entities.DeliveryInterval", "DeliveryInterval")
+                    .WithMany()
+                    .HasForeignKey("DeliveryIntervalId");
+            });
+
+            modelBuilder.Entity("ShopService.Entities.SubscriptionDate", b =>
+            {
+                b.HasOne("ShopService.Entities.Subscription", "Subscription")
+                    .WithMany("SubscriptionDates")
+                    .HasForeignKey("SubscriptionId")
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
         }
     }
 }
