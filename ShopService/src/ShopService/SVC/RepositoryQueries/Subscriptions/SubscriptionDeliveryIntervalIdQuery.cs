@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ShopService.Conventions.SVC.Queries;
 using ShopService.Conventions.Repositories;
 using ShopService.SVC.Criterions.Subscriptions;
+using ShopService.SVC.Criterions.DeliveryIntervals;
 using ShopService.Entities;
 
 namespace ShopService.SVC.RepositoryQueries.Subscriptions
 {
+    
     public class SubscriptionDeliveryIntervalIdQuery : IQuery<SubscriptionDeliveryIntervalIdCriterion, long?>
     {
         private readonly ILinqProvider _linqProvider;

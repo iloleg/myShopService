@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ShopService.Conventions.SVC.Queries;
 using ShopService.Conventions.Repositories;
@@ -9,6 +7,8 @@ using ShopService.Entities;
 
 namespace ShopService.SVC.RepositoryQueries.Subscriptions
 {
+  
+
     public class SubscriptionWithProductsQuery : IQuery<SubscriptionWithProductsCriterion, Subscription>
     {
         private readonly ILinqProvider _linqProvider;

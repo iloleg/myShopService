@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShopService.Conventions.SVC.Queries
 {
-    interface IQueryResolver
+    public interface IQueryResolver
     {
         IQuery<TCriterion, TResult> Resolve<TCriterion, TResult>() where TCriterion : ICriterion;
     }

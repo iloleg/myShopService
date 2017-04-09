@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ShopService.Conventions.SVR.Queries;
+using ShopService.Conventions.SVC.Queries;
 using ShopService.Conventions.Repositories;
-using ShopService.SRV.Criterions.DeliveryIntervals;
+using ShopService.SVC.Criterions.DeliveryIntervals;
 using ShopService.Entities;
 
 

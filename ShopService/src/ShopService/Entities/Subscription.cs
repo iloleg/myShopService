@@ -1,6 +1,5 @@
 ﻿
 using System.Collections.Generic;
-
 using ShopService.Conventions;
 
 namespace ShopService.Entities

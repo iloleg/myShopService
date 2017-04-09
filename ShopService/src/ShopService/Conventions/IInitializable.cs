@@ -2,7 +2,7 @@
 
 namespace ShopService.Conventions
 {
-    interface IInitializable
+    public interface IInitializable
     {
         int Order { get; }
         void Initialize();

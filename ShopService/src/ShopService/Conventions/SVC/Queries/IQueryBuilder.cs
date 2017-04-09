@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShopService.Conventions.SVC.Queries
 {
-    interface IQueryBuilder
+    public interface IQueryBuilder
     {
         IQueryFor<TResult> For<TResult>();
     }

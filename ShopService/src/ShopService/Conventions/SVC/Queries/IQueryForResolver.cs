@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShopService.Conventions.SVC.Queries
 {
-    interface IQueryForResolver
+    public interface IQueryForResolver
     {
         IQueryFor<T> Resolve<T>();
     }

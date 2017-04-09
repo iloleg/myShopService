@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShopService.Conventions.CQS.Queries;
+using ShopService.Conventions.SVC.Queries;
 using ShopService.SVC.Criterions.Subscriptions;
 using ShopService.Entities;
 

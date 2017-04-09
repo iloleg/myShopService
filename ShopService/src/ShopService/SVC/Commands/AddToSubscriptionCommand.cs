@@ -7,8 +7,7 @@ using ShopService.SVC.Criterions.Subscriptions;
 
 namespace ShopService.SVC.Commands
 {
-    public class AddToSubscriptionCommand
-    : ICommand<AddToSubscriptionContext>
+    public class AddToSubscriptionCommand : ICommand<AddToSubscriptionContext>
     {
         private readonly ICommandBuilder _commandBuilder;
         private readonly IQueryBuilder _queryBuilder;

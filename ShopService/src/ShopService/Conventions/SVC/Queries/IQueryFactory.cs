@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShopService.Conventions.SVC.Queries
 {
-    interface IQueryFactory
+    public interface IQueryFactory
     {
         IQuery<TCriterion, TResult> Create<TCriterion, TResult>()
             where TCriterion : ICriterion;

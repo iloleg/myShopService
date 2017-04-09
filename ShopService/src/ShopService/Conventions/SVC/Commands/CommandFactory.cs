@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ShopService.Conventions.SVC.Commands
+﻿namespace ShopService.Conventions.SVC.Commands
 {
-    public class CommandFactory
-    : ICommandFactory
+    public class CommandFactory : ICommandFactory
     {
         private readonly ICommandResolver _commandResolver;
 

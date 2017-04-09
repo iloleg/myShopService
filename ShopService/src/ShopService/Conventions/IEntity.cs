@@ -2,7 +2,7 @@
 
 namespace ShopService.Conventions
 {
-    interface IEntity
+    public interface IEntity
     {
         long Id { get; set; }
     }

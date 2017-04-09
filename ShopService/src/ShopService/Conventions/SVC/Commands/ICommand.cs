@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Threading.Tasks;
 
 namespace ShopService.Conventions.SVC.Commands
 {
-    public interface ICommand
-    <in TCommandContext>
+    public interface ICommand<in TCommandContext>
         where TCommandContext : ICommandContext
     {
        
