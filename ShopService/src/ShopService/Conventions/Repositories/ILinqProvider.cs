@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShopService.Conventions.Repositories
 {
-    interface ILinqProvider
+   public interface ILinqProvider
     {
         IQueryable<TEntity> Query<TEntity>()
             where TEntity : class, IEntity, new();

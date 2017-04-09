@@ -7,8 +7,7 @@ using ShopService.Entities;
 
 namespace ShopService.SVC.Contexts
 {
-    public class AddSubcriptionDateRepositoryContext
-    : ICommandContext
+    public class AddSubcriptionDateRepositoryContext : ICommandContext
     {
         public AddSubcriptionDateRepositoryContext(SubscriptionDate subscriptionDate)
         {
