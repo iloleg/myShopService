@@ -9,11 +9,12 @@ using ShopService.Conventions.Enums;
 using ShopService.SVC.Criterions.DeliveryIntervals;
 using ShopService.SVC.Criterions.Subscriptions;
 using ShopService.Entities;
+using ShopService.Models.SubscriptionViewModels;
 
 namespace ShopService.SVC.Queries.Deliveries
 {
-    public class DeliveryDatesQuery
-    : IQuery<DeliveryDatesCriterion, List<DateTime>>
+
+    public class DeliveryDatesQuery : IQuery<DeliveryDatesCriterion, List<DateTime>>
     {
         private readonly IQueryBuilder _queryBuilder;
 

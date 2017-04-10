@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "d0f332d29bdce1963030276e3bdcc3c30f70534f"
+    "signature": "4802e8f2a64249754cd811a5be7723cb46e8093d"
   },
   "compilationOptions": {
     "defines": [
@@ -34,13 +34,41 @@
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
+          "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
+          "ncrontab": "3.3.0",
+          "Autofac.Extensions.DependencyInjection": "4.0.0",
+          "NCrontab.Advanced": "1.2.3.3"
         },
         "runtime": {
           "ShopService.dll": {}
         },
         "compile": {
           "ShopService.dll": {}
+        }
+      },
+      "Autofac/4.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Autofac.dll": {}
+        }
+      },
+      "Autofac.Extensions.DependencyInjection/4.0.0": {
+        "dependencies": {
+          "Autofac": "4.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "NETStandard.Library": "1.6.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.Extensions.DependencyInjection.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.1": {
@@ -1583,6 +1611,33 @@
         },
         "compile": {
           "lib/netstandard1.6/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
+        }
+      },
+      "ncrontab/3.3.0": {
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Resources.ResourceManager": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NCrontab.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/NCrontab.dll": {}
+        }
+      },
+      "NCrontab.Advanced/1.2.3.3": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/NCrontab.Advanced.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/NCrontab.Advanced.dll": {}
         }
       },
       "Newtonsoft.Json/9.0.1": {
@@ -3728,6 +3783,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Autofac/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SCKzdkxEhyP0ahU4j2Fl3SQEO3BzAgGl1WpXe7oNHdDiVKRJ6DRpumfSekABPaBygeWwjDt88PBqe2nRToRrYA=="
+    },
+    "Autofac.Extensions.DependencyInjection/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UQP+CkHs6wfjWhisuhSFoG8CNrG8fmYOclFwx/aYNc+He1Qoi8s9UDTSzcPncJ2JOtmZmFRWSLT0jhtT6KmYJg=="
+    },
     "Microsoft.AspNetCore.Antiforgery/1.0.1": {
       "type": "package",
       "serviceable": true,
@@ -4227,6 +4292,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-7Npb0ypZ0Ba1oCv7T5GWF+gJTmJz7b8VzvsysRQxhJFz0LgFx3hHu81cKj9/WYf9JBObkt8trwAwec3qrOytGQ=="
+    },
+    "ncrontab/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oNHphZD7YiqHJoqX5Myw+lfDDTnnI2i+mCuil8MW2gyHaEejhLOdsS9pqVUGAEIJsu4+OL+m3UmkBcw2gkdtsg=="
+    },
+    "NCrontab.Advanced/1.2.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OE0AXhJWJ+mKzLQvPFqKjDWI/PX1HSPFIJIPZR3/gZrbsD6uUQYuGUGJkthWD7o9OKZaEhJBHv1pqRLc9NDfmg=="
     },
     "Newtonsoft.Json/9.0.1": {
       "type": "package",

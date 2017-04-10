@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ShopService.Conventions.SVC.Queries;
 using ShopService.Conventions.Repositories;
-using ShopService.SVC.Criterions.Subscriptions;
 using ShopService.SVC.Criterions.DeliveryIntervals;
 using ShopService.Entities;
 
