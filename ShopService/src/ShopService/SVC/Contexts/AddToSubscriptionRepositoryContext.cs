@@ -1,5 +1,4 @@
-﻿
-using ShopService.Conventions.SVC.Commands;
+﻿using ShopService.Conventions.SVC.Commands;
 
 namespace ShopService.SVC.Contexts
 {

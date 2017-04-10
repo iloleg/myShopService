@@ -9,8 +9,7 @@ using ShopService.Entities;
 
 namespace ShopService.SVC.Commands
 {
-    public class SuspendResumeSubscriptionCommand
-    : ICommand<SuspendResumeSubscriptionContext>
+    public class SuspendResumeSubscriptionCommand : ICommand<SuspendResumeSubscriptionContext>
     {
         private readonly IQueryBuilder _queryBuilder;
         private readonly ICommandBuilder _commandBuilder;

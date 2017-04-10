@@ -1,13 +1,11 @@
-﻿
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace ShopService.Conventions.SVC.Commands
 {
     public interface ICommand<in TCommandContext>
         where TCommandContext : ICommandContext
     {
-       
-       
-        Task<CommandResult> ExecuteAsync(TCommandContext commandContext);
+      
+       Task<CommandResult> ExecuteAsync(TCommandContext commandContext);
     }
 }

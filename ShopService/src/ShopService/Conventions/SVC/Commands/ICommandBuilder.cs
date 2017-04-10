@@ -1,9 +1,8 @@
-﻿
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace ShopService.Conventions.SVC.Commands
 {
-    interface ICommandBuilder
+   public interface ICommandBuilder
     {
         Task<CommandResult> ExecuteAsync<TCommandContext>(TCommandContext commandContext)
            where TCommandContext : ICommandContext;

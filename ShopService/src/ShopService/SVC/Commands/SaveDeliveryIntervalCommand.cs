@@ -12,8 +12,7 @@ using ShopService.Entities;
 
 namespace ShopService.SVC.Commands
 {
-    public class SaveDeliveryIntervalCommand
-    : ICommand<SaveDeliveryIntervalContext>
+    public class SaveDeliveryIntervalCommand : ICommand<SaveDeliveryIntervalContext>
     {
         private readonly IQueryBuilder _queryBuilder;
         private readonly ICommandBuilder _commandBuilder;

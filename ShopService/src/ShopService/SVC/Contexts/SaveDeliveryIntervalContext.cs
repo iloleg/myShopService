@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using ShopService.Conventions.SVC.Commands;
 using ShopService.Entities;
 
