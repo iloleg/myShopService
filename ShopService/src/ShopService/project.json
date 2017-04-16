@@ -47,8 +47,7 @@
     },
     "ncrontab": "3.3.0",
     "Autofac.Extensions.DependencyInjection": "4.0.0",
-    "NCrontab.Advanced": "1.2.3.3",
-    "NUnit": "3.6.1"
+    "NCrontab.Advanced": "1.2.3.3"
   },
 
   "tools": {
