@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "4802e8f2a64249754cd811a5be7723cb46e8093d"
+    "signature": "3322d47c15f446056f34d66f0f24d20e0f609a78"
   },
   "compilationOptions": {
     "defines": [
@@ -14,7 +14,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v1.0": {
-      "ShopService/1.0.0": {
+      "ShopService/1.0.1": {
         "dependencies": {
           "Microsoft.NETCore.App": "1.0.1",
           "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
@@ -37,7 +37,8 @@
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
           "ncrontab": "3.3.0",
           "Autofac.Extensions.DependencyInjection": "4.0.0",
-          "NCrontab.Advanced": "1.2.3.3"
+          "NCrontab.Advanced": "1.2.3.3",
+          "NUnit": "3.6.1"
         },
         "runtime": {
           "ShopService.dll": {}
@@ -1863,6 +1864,18 @@
         },
         "compile": {
           "lib/netstandard1.0/NuGet.Versioning.dll": {}
+        }
+      },
+      "NUnit/3.6.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.Runtime.Loader": "4.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/nunit.framework.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/nunit.framework.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -3778,7 +3791,7 @@
     }
   },
   "libraries": {
-    "ShopService/1.0.0": {
+    "ShopService/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -4377,6 +4390,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Stok+SI5lWxOkTgZZM7jT4xuAZogm5+j85mKJeHSXb8o0OAbB+qDX9jkdM2wIEnjoR8R29J0nQYwk2Kl2lWFpA=="
+    },
+    "NUnit/3.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0FPgTzx3+8HQsQLv85IRXuQVlc53whh1gWQkYL2sqQu7sj9cCiNTgiv0SCTut7lvRX/fXyBIS954VJEjxtL5gw=="
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",
